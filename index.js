@@ -9,7 +9,7 @@ const port=process.env.PORT || 3001
 app.use('/localDir', express.static('public/localDir'), serveIndex('public/localDir', {'icons': true}))
 
 app.get('/',(req,res)=>{
-    res.send(`<h4 style="text-align:center;">Welcome, Click here to see the local Dir contents :<a href="https://node-files-folders-display.herokuapp.com/localDir">Click Here</a></h4>`)
+    res.send(`<h4 style="text-align:center;">Welcome, Click here to see the local Dir contents :<a href=${process.env.PUBLIC_DIR}>Click Here</a></h4>`)
 })
 // Listen
 app.listen(port,()=>{
